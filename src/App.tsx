@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {NewComponent} from "./site/NewComponent";
+import {ComponentCar} from "./site/ComponentCar";
 
 function App() {
     const students = [
@@ -16,12 +17,18 @@ function App() {
         {id: 10, name: "Charles", age: 98},
         {id: 11, name: "Christopher", age: 100},
     ];
+    const topCars = [
+        {manufacturer: "BMW", model: 'm5cs'},
+        {manufacturer: "Mercedes", model: 'e63s'},
+        {manufacturer: "Audi", model: 'rs6'}
+    ]
 
     return (
-    <div className="App">
-<NewComponent students={students}/>
-    </div>
-  );
+        <div className="App">
+            <NewComponent students={students}/>
+            <ComponentCar topCars={topCars}/>
+        </div>
+    );
 }
 
 export default App;

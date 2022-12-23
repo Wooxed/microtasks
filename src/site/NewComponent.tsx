@@ -9,13 +9,6 @@ type StudentType = {
 }
 
 export const NewComponent = (props: NewComponentType) => {
-    // const topCars = [
-    //     {manufacturer:"BMW",model:'m5cs'},
-    //     {manufacturer:"Mercedes",model:'e63s'},
-    //     {manufacturer:"Audi",model:'rs6'}
-    // ]
-
-
     return (
         <ul>
             {props.students.map((u) => {
