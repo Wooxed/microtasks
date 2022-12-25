@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {NewComponent} from "./site/NewComponent";
 import {ComponentCar} from "./site/ComponentCar";
+import Button from "./components/Button";
 
 function App() {
     const students = [
@@ -23,10 +24,25 @@ function App() {
         {manufacturer: "Audi", model: 'rs6'}
     ]
 
+    const Button1Foo = (subscriber: string, age: number)=> {
+        console.log(subscriber, age)
+    }
+    const Button2Foo = (subscriber: string)=> {
+        console.log(subscriber)
+    }
+    const Button3Foo = (subscriber: string)=> {
+        console.log(subscriber)
+    }
+
     return (
         <div className="App">
-            <NewComponent students={students}/>
-            <ComponentCar topCars={topCars}/>
+            <Button name={'MyYouTubeChanel-1'} callback={()=>Button1Foo('I am Vasya', 21)}/>
+            <Button name={'MyYouTubeChanel-2'} callback={()=>Button2Foo('I am Ivan')}/>
+            <Button name={'Stupid Button'} callback={()=>Button3Foo('I am Stupid button')}/>
+
+
+            {/*<NewComponent students={students}/>*/}
+            {/*<ComponentCar topCars={topCars}/>*/}
         </div>
     );
 }
