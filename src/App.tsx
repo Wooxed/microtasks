@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {NewComponent} from "./site/NewComponent";
 import {ComponentCar} from "./site/ComponentCar";
@@ -23,7 +23,6 @@ function App() {
         {manufacturer: "Mercedes", model: 'e63s'},
         {manufacturer: "Audi", model: 'rs6'}
     ]
-
     const Button1Foo = (subscriber: string, age: number)=> {
         console.log(subscriber, age)
     }
@@ -34,13 +33,24 @@ function App() {
         console.log(subscriber)
     }
 
+    let [a, setA] = useState(1)
+
+    const onClickHandler = () => {
+        setA(++a)
+        console.log(a)
+    }
+    const onClickNull = () => {
+        setA(0)
+    }
+
     return (
         <div className="App">
-            <Button name={'MyYouTubeChanel-1'} callback={()=>Button1Foo('I am Vasya', 21)}/>
-            <Button name={'MyYouTubeChanel-2'} callback={()=>Button2Foo('I am Ivan')}/>
-            <Button name={'Stupid Button'} callback={()=>Button3Foo('I am Stupid button')}/>
-
-
+            <h1>{a}</h1>
+            <button onClick={onClickHandler}>number</button>
+            <button onClick={onClickNull}>0</button>
+            {/*<Button name={'MyYouTubeChanel-1'} callback={()=>Button1Foo('I am Vasya', 21)}/>*/}
+            {/*<Button name={'MyYouTubeChanel-2'} callback={()=>Button2Foo('I am Ivan')}/>*/}
+            {/*<Button name={'Stupid Button'} callback={()=>Button3Foo('I am Stupid button')}/>*/}
             {/*<NewComponent students={students}/>*/}
             {/*<ComponentCar topCars={topCars}/>*/}
         </div>
