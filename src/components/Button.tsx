@@ -1,11 +1,11 @@
 import React from "react";
 
-type ButtonType = {
+type ButtonPropsType = {
     name: string
     callBack: () => void
 }
 
-export function Button(props: ButtonType) {
+export function Button(props: ButtonPropsType) {
     const onClickHandler = () => {
         props.callBack()
     }
